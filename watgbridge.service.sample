@@ -1,13 +1,12 @@
 [Unit]
-Description=Bridge between WhatsApp and Telegram
-After=network.target tgbotapi.service
+Description=Telegram Bot API Server
+After=network.target
 
 [Service]
 Type=idle
 Restart=on-failure
-User=akshettrj
-RuntimeMaxSec=1d
-ExecStart=/bin/bash -c 'sleep 20 && cd /home/akshettrj/work/go/src/watgbridge && ./watgbridge'
+User=root
+ExecStart=/bin/bash -c '/home/akshettrj/.local/bin/tgbotapi --api-id 24000750 --api-hash 1e33861ba195517eae78c9b1de22109a --local -p 8082 -d /home/akshettrj/.local/share/tgbotapi/data -t /home/akshettrj/.local/share/tgbotapi/data/temp --log /home/akshettrj/.local/share/tgbotapi/data/logs.txt'
 
 [Install]
 WantedBy=multi-user.target
