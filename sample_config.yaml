@@ -54,9 +54,9 @@ whatsapp:
   send_revoked_message_updates: false
   whatsmeow_debug_mode: false
   send_my_messages_from_other_devices: false      # If set to true, the messages sent by you from other devices will be sent to Telgram as well
-  #login_database:               # Uncomment only if you want to use something other than sqlite
-  #  type: sqlite3
-  #  url: file:wawebstore.db?foreign_keys=on
+  login_database:               # Uncomment only if you want to use something other than sqlite
+    type: PostgreSQL
+    url: postgres://admin:4AgwencPTcsnAEn4EXe23ljxcjhoBHqr@dpg-clu9ovfqd2ns73a9jmu0-a/dbwat
   sticker_metadata:               # This will work only if you have webpmux installed on your system
     pack_name: WaTgBridge
     author_name: WaTgBridge
@@ -65,23 +65,23 @@ whatsapp:
 #Uncomment any on of these sections
 #Using the sqlite database will be easiest as it does not require any hosted database server and stores data in a single file on your device
 
-#database:
-#  type: postgres
-#  host: localhost
-#  user: admin
-#  password: password
-#  dbname: gobot
-#  port: 5432
-#  time_zone: Asia/Kolkata
+database:
+  type: PostgreSQL
+  host: dpg-clu9ovfqd2ns73a9jmu0-a
+  user: admin
+  password: 4AgwencPTcsnAEn4EXe23ljxcjhoBHqr
+  dbname: dbwat
+  port: 5432
+  time_zone: Asia/Kolkata
 
-#database:
-#  type: sqlite
-#  path: ./gobot.sqlite.db
+database:
+  type: PostgreSQL
+  PostgreSQL Version: 15
 
-#database:
-#  type: mysql
-#  host: localhost
-#  port: 3306
-#  user: admin
-#  password: password
-#  dbname: gobot
+database:
+  type: PostgreSQL
+  host: dpg-clu9ovfqd2ns73a9jmu0-a
+  port: 5432
+  user: admin
+  password: 4AgwencPTcsnAEn4EXe23ljxcjhoBHqr
+  dbname: dbwat
